@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="lab2.css">
+	</head>
+	<body>
+		<table class="main">
+			<tr>
+				<td>RANK:</td>
+				<td>
+				<select id="rank1">
+					<option value=1>ACE</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+					<option value=6>6</option>
+					<option value=7>7</option>
+					<option value=8>8</option>
+					<option value=9>9</option>
+					<option value=10>10</option>
+					<option value=11>JACK</option>
+					<option value=12>QUEEN</option>
+					<option value=13>KING</option>
+				</select></td>
+				<td>
+				<select id="rank2">
+					<option value=1>ACE</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+					<option value=6>6</option>
+					<option value=7>7</option>
+					<option value=8>8</option>
+					<option value=9>9</option>
+					<option value=10>10</option>
+					<option value=11>JACK</option>
+					<option value=12>QUEEN</option>
+					<option value=13>KING</option>
+				</select></td><td>
+				<select id="rank3">
+					<option value=1>ACE</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+					<option value=6>6</option>
+					<option value=7>7</option>
+					<option value=8>8</option>
+					<option value=9>9</option>
+					<option value=10>10</option>
+					<option value=11>JACK</option>
+					<option value=12>QUEEN</option>
+					<option value=13>KING</option>
+				</select></td><td>
+				<select id="rank4">
+					<option value=1>ACE</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+					<option value=6>6</option>
+					<option value=7>7</option>
+					<option value=8>8</option>
+					<option value=9>9</option>
+					<option value=10>10</option>
+					<option value=11>JACK</option>
+					<option value=12>QUEEN</option>
+					<option value=13>KING</option>
+				</select></td><td>
+				<select id="rank5">
+					<option value=1>ACE</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+					<option value=6>6</option>
+					<option value=7>7</option>
+					<option value=8>8</option>
+					<option value=9>9</option>
+					<option value=10>10</option>
+					<option value=11>JACK</option>
+					<option value=12>QUEEN</option>
+					<option value=13>KING</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>SUIT:</td>
+				<td>
+				<select id="suit1">
+					<option value="DIAMONDS">DIAMONDS</option>
+					<option value="HEARTS">HEARTS</option>
+					<option value="CLUBS">CLUBS</option>
+					<option value="SPADES">SPADES</option>
+				</select></td>
+				<td>
+				<select id="suit2">
+					<option value="DIAMONDS">DIAMONDS</option>
+					<option value="HEARTS">HEARTS</option>
+					<option value="CLUBS">CLUBS</option>
+					<option value="SPADES">SPADES</option>
+				</select></td>
+				<td>
+				<select id="suit3">
+					<option value="DIAMONDS">DIAMONDS</option>
+					<option value="HEARTS">HEARTS</option>
+					<option value="CLUBS">CLUBS</option>
+					<option value="SPADES">SPADES</option>
+				</select></td>
+				<td>
+				<select id="suit4">
+					<option value="DIAMONDS">DIAMONDS</option>
+					<option value="HEARTS">HEARTS</option>
+					<option value="CLUBS">CLUBS</option>
+					<option value="SPADES">SPADES</option>
+				</select></td>
+				<td>
+				<select id="suit5">
+					<option value="DIAMONDS">DIAMONDS</option>
+					<option value="HEARTS">HEARTS</option>
+					<option value="CLUBS">CLUBS</option>
+					<option value="SPADES">SPADES</option>
+				</select></td>
+
+			</tr>
+			<tr>
+				<td>
+				<button onclick=start()>
+					Submit
+				</button></td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			function start() {
+				hand = [];
+				hand[0] = new card(document.getElementById("rank1").value, document.getElementById("suit1").value);
+				hand[1] = new card(document.getElementById("rank2").value, document.getElementById("suit2").value);
+				hand[2] = new card(document.getElementById("rank3").value, document.getElementById("suit3").value);
+				hand[3] = new card(document.getElementById("rank4").value, document.getElementById("suit4").value);
+				hand[4] = new card(document.getElementById("rank5").value, document.getElementById("suit5").value);
+				hand.sort(function(a, b) {
+					return a.getRank() - b.getRank();
+				});
+				alert(poker(hand));
+			}
+		</script>
+		<script type="text/javascript" src="lab2.js"></script>
+	</body>
+</html>
